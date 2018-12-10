@@ -1,0 +1,7 @@
+version: '3'
+services:
+  data_store:
+    image: devmasx/gcloud-datastore-emulator
+    command: "gcloud beta emulators datastore start --host-port 0.0.0.0:8000 --no-store-on-disk"
+    ports:
+      - "8000:8000"
