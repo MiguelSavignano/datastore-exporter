@@ -8,8 +8,6 @@ class DataStoreExporter {
     this.datastore = datastore
   }
 
-  // filePath: filePath
-  // type: csv | json
   async csv(entityName, filePath) {
     const result = await this.fetchDatastoreEntity(entityName)
     this.writeToCsv(filePath, result)
@@ -24,19 +22,26 @@ class DataStoreExporter {
 
   async fetchDatastoreEntity(entityName) {
     const query = this.datastore.createQuery(entityName)
-    const [tasks] = await this.datastore.runQuery(query);
-    // const taskKey = task[datastore.KEY];
-    // console.log("Task", taskKey.id);
-    return tasks
+    const [result] = await this.datastore.runQuery(query);
+    return result.map(item => {
+      const itemKey = item[this.datastore.KEY];
+      return {
+        id: itemKey && itemKey.id,
+        namespace: itemKey && itemKey.namespace,
+        kind: itemKey && itemKey.kind,
+        ...item
+      }
+    })
+
   }
 
   writeToJson(filePath, listData) {
     fs.writeFileSync(filePath, JSON.stringify(tasks))
   }
 
-  writeToCsv(filePath, listData) {
+  writeToCsv(filePath, listData, options = {quote: ''}) {
     const fields = Object.keys(listData[0])
-    const json2csvParser = new Json2csvParser({ fields, quote: ''});
+    const json2csvParser = new Json2csvParser({ fields, ...options });
     const csv = json2csvParser.parse(listData);
     fs.writeFileSync(filePath, csv)
   }
