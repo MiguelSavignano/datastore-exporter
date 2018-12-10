@@ -1,20 +1,20 @@
 {
   "name": "datastore-exporter",
-  "version": "1.0.0",
-  "description": "",
-  "main": "example.js",
+  "version": "0.1.0",
+  "description": "Export your google datastore data to csv or json",
+  "main": "DatastoreExporter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Miguel Savignano",
   "license": "ISC",
   "dependencies": {
-    "@google-cloud/datastore": "^2.0.0",
-    "dotenv": "^6.2.0",
     "json2csv": "^4.3.2"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.118",
+    "dotenv": "^6.2.0",
+    "@google-cloud/datastore": "^2.0.0",
     "lodash": "^4.17.11"
   }
 }

@@ -1,6 +1,6 @@
 # DataStoreExporter
 
-Export your datastore entities to csv or json
+Export your google datastore data to csv or json
 
 ## Usage
 ```javascript
