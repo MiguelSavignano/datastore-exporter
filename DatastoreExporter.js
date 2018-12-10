@@ -8,9 +8,9 @@ class DataStoreExporter {
     this.datastore = datastore
   }
 
-  async csv(entityName, filePath) {
+  async csv(entityName, filePath, csvOptions = {quote: ''}) {
     const result = await this.fetchDatastoreEntity(entityName)
-    this.writeToCsv(filePath, result)
+    this.writeToCsv(filePath, result, csvOptions)
     console.log(`Data exported to: ${filePath}`)
   }
 
