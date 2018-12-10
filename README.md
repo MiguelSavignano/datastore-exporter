@@ -1,4 +1,4 @@
-# DataStoreExporter
+# Gcloud Datastore exporter
 
 Export your google datastore data to csv or json
 
@@ -42,3 +42,10 @@ This method use [json2csv](https://www.npmjs.com/package/json2csv) npm package
 | ------------- | ------- |  ------------- |
 | entityName    | String  | datastore entity name
 | filePath      | String  | file path to save the json
+
+
+### Why?
+
+Following this [guide](https://cloud.google.com/datastore/docs/export-import-entities) Datastore can be exporter to a GCP bucket and import to Bigquery for download in csv.
+
+If you don't have access to GCP bucket or Bigquery this package help you to export data to csv or json files.
