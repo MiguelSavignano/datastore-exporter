@@ -1,5 +1,5 @@
 {
-  "name": "datastore-exporter",
+  "name": "gcloud-datastore-exporter",
   "version": "0.1.0",
   "description": "Export your google datastore data to csv or json",
   "main": "DatastoreExporter.js",

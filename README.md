@@ -2,10 +2,15 @@
 
 Export your google datastore data to csv or json
 
+## Install
+```
+npm install gcloud-datastore-exporter --save
+```
+
 ## Usage
 ```javascript
 const Datastore = require('@google-cloud/datastore');
-const DataStoreExporter = require('datastore-exporter')
+const DataStoreExporter = require('gcloud-datastore-exporter')
 const projectId = 'project-example';
 const datastore = new Datastore({ projectId });
 
