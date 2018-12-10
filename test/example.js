@@ -1,7 +1,8 @@
 require('dotenv').config()
 const Datastore = require('@google-cloud/datastore');
-const datastoreExporter = require('../datastoreExporter.js')
+const DataStoreExporter = require('../DatastoreExporter.js')
 const projectId = 'project-example';
 const datastore = new Datastore({ projectId });
 
-datastoreExporter(datastore, "User", "users.csv", "csv")
+const datastoreExporter = new DataStoreExporter(datastore)
+datastoreExporter.csv("User", "users.csv")
