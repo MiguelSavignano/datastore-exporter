@@ -14,6 +14,14 @@ async function bulkSave() {
       data: {
         name: `Jhon`,
         age: i,
+        login: {
+          google: true,
+          facebook: false
+        },
+        emails: {
+          google: "example@gmail.com",
+        },
+        friends: ["Jhon"]
       },
     };
     await datastore.save(task)
