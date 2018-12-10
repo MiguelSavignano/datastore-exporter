@@ -5,18 +5,19 @@ const Datastore = require('@google-cloud/datastore');
 async function bulkSave() {
   const projectId = 'project-example';
   const datastore = new Datastore({ projectId });
-  const kind = 'Task';
+  const kind = 'User';
   const taskKey = datastore.key([kind]);
 
   _.times(1000, async (i) => {
     const task = {
       key: taskKey,
       data: {
-        description: `Task ${i}`,
+        name: `Jhon`,
+        age: i,
       },
     };
     await datastore.save(task)
-    console.log(`Saved ${i}: ${task.key.id}: ${task.data.description}`);
+    console.log(`Saved ${i}: ${task.key.id}: ${task.data.name}`);
   })
 }
 
