@@ -12,9 +12,10 @@
     "json2csv": "^4.3.2"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.118",
-    "dotenv": "^6.2.0",
     "@google-cloud/datastore": "^2.0.0",
-    "lodash": "^4.17.11"
+    "@types/lodash": "^4.14.118",
+    "acorn": ">=5.7.4",
+    "dotenv": "^6.2.0",
+    "lodash": "^4.17.15"
   }
 }
